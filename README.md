@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lizmat/P5pack.svg)](https://travis-ci.org/lizmat/P5pack)
+
 NAME
 ====
 
