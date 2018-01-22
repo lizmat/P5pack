@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lizmat/P5pack.svg)](https://travis-ci.org/lizmat/P5pack)
+[![Build Status](https://travis-ci.org/lizmat/P5pack.svg?branch=master)](https://travis-ci.org/lizmat/P5pack)
 
 NAME
 ====
