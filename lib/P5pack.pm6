@@ -186,7 +186,7 @@ my sub pack($template, *@items) is export {
                 my int @bytes = $val +& 0x7f;
                 @bytes.unshift($val +& 0x7f +| 0x80)
                   until ($val = $val div 0x80) == 0;
-                $buf.push(@bytes);
+                $buf.append(@bytes);
             }
         }
         my int $times = $repeat eq '*' || $repeat > @items - $pos
