@@ -15,7 +15,7 @@ DESCRIPTION
 
 Implements Perl 5's `pack`/`unpack` functionality in Perl 6.
 
-Currently supported directives are: a A c C h H i I l L n N q Q s S U v V x Z
+Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
 ORIGINAL PERL 5 DOCUMENTATION
 =============================
