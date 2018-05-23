@@ -318,10 +318,10 @@ ORIGINAL PERL 5 DOCUMENTATION
                 larger. This is mainly an issue on 64-bit platforms. You can
                 see whether using "!" makes any difference this way:
 
-                    printf "format s is %d, s! is %d\n", 
+                    printf "format s is %d, s! is %d\n",
                         length pack("s"), length pack("s!");
 
-                    printf "format l is %d, l! is %d\n", 
+                    printf "format l is %d, l! is %d\n",
                         length pack("l"), length pack("l!");
 
                 "i!" and "I!" are also allowed, but only for completeness'
@@ -468,16 +468,16 @@ ORIGINAL PERL 5 DOCUMENTATION
                 non-Unicode bytes is not necessarily obvious. Probably only
                 the first of these is what you want:
 
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -CS -ne 'printf "%v04X\n", $_ for unpack("C0A*", $_)'
                     03B1.03C9
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -CS -ne 'printf "%v02X\n", $_ for unpack("U0A*", $_)'
                     CE.B1.CF.89
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -C0 -ne 'printf "%v02X\n", $_ for unpack("C0A*", $_)'
                     CE.B1.CF.89
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -C0 -ne 'printf "%v02X\n", $_ for unpack("U0A*", $_)'
                     C3.8E.C2.B1.C3.8F.C2.89
 
@@ -507,7 +507,7 @@ ORIGINAL PERL 5 DOCUMENTATION
 
                     struct {
                         char   c;    /* one signed, 8-bit character */
-                        double d; 
+                        double d;
                         char   cc[2];
                     }
 

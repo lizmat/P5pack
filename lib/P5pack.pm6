@@ -1,9 +1,9 @@
 use v6.c;
 
-unit module P5pack:ver<0.0.5>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.6>:auth<cpan:ELIZABETH>;
 
 my %dispatch;
-{
+BEGIN {
     my int $i = -1;
     %dispatch.ASSIGN-KEY($_,$i = $i + 1)
       for <a A c C h H i I l L n N q Q s S U v V w x X Z>;
@@ -97,7 +97,7 @@ my sub pack($template, *@items) is export {
     my @template := parse-pack-template($template);
     my $buf      := Buf.new;
     my int $pos   = 0;
-    my int $elems = @items.elems; 
+    my int $elems = @items.elems;
     my $repeat;
 
     sub putabyte(--> Nil) {
@@ -203,7 +203,7 @@ my sub pack($template, *@items) is export {
     }
 
     # make sure this has the same order as the %dispatch initialization
-    state @dispatch =
+    my @dispatch =
       -> --> Nil { putabyte() },                                    # a
       -> --> Nil { fill( $pos < $elems ?? ascii() !! (),0x20,0) },  # A
       -> --> Nil { one() },                                         # c
@@ -242,7 +242,7 @@ my sub unpack($template, Blob:D \b) is export {
     my @template := parse-pack-template($template);
     my @result;
     my int $pos   = 0;
-    my int $elems = b.elems; 
+    my int $elems = b.elems;
     my $repeat;
 
     sub abyte() { $pos < $elems ?? b.AT-POS($pos++) !! 0 }
@@ -341,7 +341,7 @@ my sub unpack($template, Blob:D \b) is export {
     }
 
     # make sure this has the same order as the %dispatch initialization
-    state @dispatch =
+    my @dispatch =
       -> --> Nil { reassemble-string() },               # a
       -> --> Nil { reassemble-string(0x20) },           # A
       -> --> Nil {                                      # c
@@ -372,7 +372,7 @@ my sub unpack($template, Blob:D \b) is export {
           $repeat eq "*"
             ?? (reassemble-utf8() while $pos < $elems)
             !! (reassemble-utf8() for ^$repeat);
-      },        
+      },
       -> --> Nil { repeat-reassemble-uint(@VAX2) },     # v
       -> --> Nil { repeat-reassemble-uint(@VAX4) },     # V
       -> --> Nil {                                      # w
@@ -721,10 +721,10 @@ Currently supported directives are: a A c C h H i I l L n N q Q s S U v V x Z
                 larger. This is mainly an issue on 64-bit platforms. You can
                 see whether using "!" makes any difference this way:
 
-                    printf "format s is %d, s! is %d\n", 
+                    printf "format s is %d, s! is %d\n",
                         length pack("s"), length pack("s!");
 
-                    printf "format l is %d, l! is %d\n", 
+                    printf "format l is %d, l! is %d\n",
                         length pack("l"), length pack("l!");
 
                 "i!" and "I!" are also allowed, but only for completeness'
@@ -871,16 +871,16 @@ Currently supported directives are: a A c C h H i I l L n N q Q s S U v V x Z
                 non-Unicode bytes is not necessarily obvious. Probably only
                 the first of these is what you want:
 
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -CS -ne 'printf "%v04X\n", $_ for unpack("C0A*", $_)'
                     03B1.03C9
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -CS -ne 'printf "%v02X\n", $_ for unpack("U0A*", $_)'
                     CE.B1.CF.89
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -C0 -ne 'printf "%v02X\n", $_ for unpack("C0A*", $_)'
                     CE.B1.CF.89
-                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' | 
+                    $ perl -CS -E 'say "\x{3B1}\x{3C9}"' |
                       perl -C0 -ne 'printf "%v02X\n", $_ for unpack("U0A*", $_)'
                     C3.8E.C2.B1.C3.8F.C2.89
 
@@ -910,7 +910,7 @@ Currently supported directives are: a A c C h H i I l L n N q Q s S U v V x Z
 
                     struct {
                         char   c;    /* one signed, 8-bit character */
-                        double d; 
+                        double d;
                         char   cc[2];
                     }
 
