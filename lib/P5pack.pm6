@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5pack:ver<0.0.6>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.7>:auth<cpan:ELIZABETH>;
 
 my %dispatch;
 BEGIN {
@@ -419,7 +419,7 @@ P5times - Implement Perl 5's pack()/unpack() built-ins
 
 Implements Perl 5's C<pack>/C<unpack> functionality in Perl 6.
 
-Currently supported directives are: a A c C h H i I l L n N q Q s S U v V x Z
+Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
 =head1 ORIGINAL PERL 5 DOCUMENTATION
 
