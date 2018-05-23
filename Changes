@@ -2,6 +2,10 @@ Revision history for P5pack
 
 {{$NEXT}}
 
+0.0.6  2018-05-23T11:39:51+02:00
+    - Temporarily fixed scoping issues with state, kjpye++ for pointing out
+    - Removed some trailing whitespace
+
 0.0.5  2018-05-22T12:17:10+02:00
     - Fixed 'w' encoding, kjpye++
 
