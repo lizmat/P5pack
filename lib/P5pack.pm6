@@ -100,7 +100,7 @@ my sub pack($template, *@items) is export {
     my int $elems = @items.elems;
     my $repeat;
 
-    sub putabyte(--> Nil) {
+    sub put-a-byte(--> Nil) {
         if $pos < $elems {
             my $data = @items.AT-POS($pos++);
             fill($data ~~ Str ?? $data.encode !! $data,0,0)
@@ -204,7 +204,7 @@ my sub pack($template, *@items) is export {
 
     # make sure this has the same order as the %dispatch initialization
     my @dispatch =
-      -> --> Nil { putabyte() },                                    # a
+      -> --> Nil { put-a-byte() },                                  # a
       -> --> Nil { fill( $pos < $elems ?? ascii() !! (),0x20,0) },  # A
       -> --> Nil { one() },                                         # c
       -> --> Nil { one() },                                         # C
