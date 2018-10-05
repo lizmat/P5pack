@@ -21,8 +21,11 @@ my uint $i3 = 0x9876543210987654; # not handled correctly by Rakudo
  is pack('a',    $s1),      Buf.new(0x73);
  is pack('a3',   $s1),      Buf.new(0x73, 0x74, 0x72);
  is pack('A',    $s1),      Buf.new(0x73);
+ is pack('A9',   $s1),      Buf.new(115,116,114,105,110,103,32,32,32);
  is pack('A3',   $s1),      Buf.new(0x73, 0x74, 0x72);
  is pack('c',    @a1),      Buf.new(123);
+ is pack('c5',   @a1),      Buf.new(123,97,130,0,0);
+ is pack('c0',   @a1),      Buf.new();
  is pack('c3',   @a1),      Buf.new(123, 97, 130);
  is pack('c3',   @a2),      Buf.new(123, 97, 130);
  is pack('C',    @a1),      Buf.new(123);
