@@ -249,7 +249,7 @@ my sub unpack($template, Blob:D \b) is export {
     sub reassemble-string($filler? --> Nil) {
         my @string;
         $repeat = $elems - $pos if $repeat eq "*" || $pos + $repeat > $elems;
-        @string.push(b.ATPOS($pos++)) for ^$repeat;
+        @string.push(b.AT-POS($pos++)) for ^$repeat;
 
         with $filler {
             my int $i = @string.elems;
