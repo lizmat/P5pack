@@ -27,12 +27,8 @@ use P5pack;
  # / is not implemented
  #is unpack("a3/A A*", blobify("007 Bond  J ")), (blobify(" Bond"), blobify("J"));
 
- say unpack("C0A*", blobify("03B1.03C9"));
-done-testing;
+ is unpack("C0A*", blobify("03B1.03C9")), "03B1.03C9";
+ done-testing;
 
 
-# Auxiliary subs
-sub blobify( Str:D $s ) {
-    my $to-chars = $s.comb.map: -> $a { $a??$a.ord!!0 };
-    Buf.new(|$to-chars.list);
-}
+
