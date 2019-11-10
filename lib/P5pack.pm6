@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5pack:ver<0.0.8>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.9>:auth<cpan:ELIZABETH>;
 
 my %dispatch;
 BEGIN {
