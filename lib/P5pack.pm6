@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5pack:ver<0.0.7>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.8>:auth<cpan:ELIZABETH>;
 
 my %dispatch;
 BEGIN {
@@ -409,7 +409,7 @@ my sub unpack($template, Blob:D \b) is export {
 
 =head1 NAME
 
-P5times - Implement Perl 5's pack()/unpack() built-ins
+P5times - Implement Perl's pack()/unpack() built-ins
 
 =head1 SYNOPSIS
 
@@ -417,7 +417,7 @@ P5times - Implement Perl 5's pack()/unpack() built-ins
 
 =head1 DESCRIPTION
 
-Implements Perl 5's C<pack>/C<unpack> functionality in Perl 6.
+Implements Perl's C<pack>/C<unpack> functionality in Raku.
 
 Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
@@ -1082,10 +1082,10 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018 Elizabeth Mattijsen
+Copyright 2018-2019 Elizabeth Mattijsen
 
-Re-imagined from Perl 5 as part of the CPAN Butterfly Plan and an earlier
-version that only lived in the Perl 6 Ecosystem.
+Re-imagined from Perl as part of the CPAN Butterfly Plan and an earlier
+version that only lived in the Raku Ecosystem.
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 

@@ -2,6 +2,9 @@ Revision history for P5pack
 
 {{$NEXT}}
 
+0.0.8  2019-11-10T14:26:36+01:00
+    - Changed Perl 6 to Raku, and Perl 5 to Perl
+
 0.0.7  2018-05-24T00:53:42+02:00
     - Added some badly needed tests, kjpye++
     - Fixed documentation: support for 'w' was not mentioned
