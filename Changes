@@ -2,6 +2,9 @@ Revision history for P5pack
 
 {{$NEXT}}
 
+0.0.10  2020-03-22T22:03:41+01:00
+    - Fix typo, Tom Browder++
+
 0.0.9  2019-11-10T14:28:37+01:00
     - Reintegrate previous changes merged on Github
 

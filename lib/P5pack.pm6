@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5pack:ver<0.0.9>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.10>:auth<cpan:ELIZABETH>;
 
 my %dispatch;
 BEGIN {
@@ -409,7 +409,7 @@ my sub unpack($template, Blob:D \b) is export {
 
 =head1 NAME
 
-P5times - Implement Perl's pack()/unpack() built-ins
+P5pack - Implement Perl's pack()/unpack() built-ins
 
 =head1 SYNOPSIS
 

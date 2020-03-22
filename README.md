@@ -1,7 +1,7 @@
 NAME
 ====
 
-P5times - Implement Perl's pack()/unpack() built-ins
+P5pack - Implement Perl's pack()/unpack() built-ins
 
 SYNOPSIS
 ========
