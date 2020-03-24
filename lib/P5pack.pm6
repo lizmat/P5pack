@@ -1,6 +1,6 @@
 use v6.c;
 
-unit module P5pack:ver<0.0.10>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.11>:auth<cpan:ELIZABETH>;
 
 my %dispatch;
 BEGIN {
@@ -92,7 +92,20 @@ my sub parse-pack-template($template) {
     }
 }
 
-my sub pack($template, *@items) is export {
+my proto sub pack(|) is export {*}
+my multi sub pack(*%_) {
+    if %_.elems == 1 {
+        my $key := %_.keys.head;
+        pack $key, |%_{$key}
+    }
+    elsif %_ {
+        die "Can only specify 1 named parameter with 'pack'";
+    }
+    else {
+        die "Must at least specify a template with 'pack'";
+    }
+}
+my multi sub pack($template, *@items) {
 
     my @template := parse-pack-template($template);
     my $buf      := Buf.new;
@@ -237,7 +250,15 @@ my sub pack($template, *@items) is export {
     $buf
 }
 
-my sub unpack($template, Blob:D \b) is export {
+my proto sub unpack(|) is export {*}
+my multi sub unpack(*%_) {
+    %_.elems == 1
+      ?? unpack(|%_.kv)
+      !! %_
+        ?? die "Can only specify 1 named parameter with 'unpack'"
+        !! die "Must at least specify a template with 'unpack';"
+}
+my multi sub unpack($template, Blob:D \b) {
 
     my @template := parse-pack-template($template);
     my @result;

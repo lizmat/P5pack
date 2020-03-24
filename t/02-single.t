@@ -18,6 +18,7 @@ my uint $i3 = 0x9876543210987654; # not handled correctly by Rakudo
 
 # Test packing individual elements
 
+ is pack(a    => $s1),      Buf.new(0x73);
  is pack('a',    $s1),      Buf.new(0x73);
  is pack('a3',   $s1),      Buf.new(0x73, 0x74, 0x72);
  is pack('A',    $s1),      Buf.new(0x73);

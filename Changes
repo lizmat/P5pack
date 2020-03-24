@@ -2,6 +2,9 @@ Revision history for P5pack
 
 {{$NEXT}}
 
+0.0.11  2020-03-24T11:44:51+01:00
+    - Allow for fat comma syntax, spottoed by Tom Browder++
+
 0.0.10  2020-03-22T22:03:41+01:00
     - Fix typo, Tom Browder++
 
