@@ -426,6 +426,12 @@ my multi sub unpack($template, Blob:D \b) {
     @result
 }
 
+# Auxiliary subs
+sub blobify( Str:D $s ) is export {
+    my $to-chars = $s.comb.map: -> $a { $a??$a.ord!!0 };
+    Buf.new(|$to-chars.list);
+}
+
 =begin pod
 
 =head1 NAME

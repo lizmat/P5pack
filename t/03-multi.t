@@ -21,4 +21,14 @@ use P5pack;
 #is pack('S>L>', 42, 4711), Buf.new(??);
 #is pack('(sl)<', -42, 4711), Buf.new(??);
 
-done-testing;
+ #Examples from the pack man page
+# W is not implemented
+ #is unpack("W/a", Blob.new("\004Gurusamy".comb.map: -> $a { $a??$a.ord!!0 })),"Guru";
+ # / is not implemented
+ #is unpack("a3/A A*", blobify("007 Bond  J ")), (blobify(" Bond"), blobify("J"));
+
+ is unpack("C0A*", blobify("03B1.03C9")), "03B1.03C9";
+ done-testing;
+
+
+
