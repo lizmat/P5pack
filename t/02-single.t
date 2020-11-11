@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5pack;
 
@@ -81,3 +81,5 @@ my uint $i3 = 0x9876543210987654; # not handled correctly by Rakudo
 #is pack('Z[3]', $s1),      Buf.new(0x73, 0x74, 0x72);
 
 done-testing;
+
+# vim: expandtab shiftwidth=4

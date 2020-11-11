@@ -1,6 +1,6 @@
-use v6.c;
+use v6.*;
 
-unit module P5pack:ver<0.0.11>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.12>:auth<cpan:ELIZABETH>;
 
 my %dispatch;
 BEGIN {
@@ -10,7 +10,7 @@ BEGIN {
 }
 my int $bits = $*KERNEL.bits;
 
-# this need to be conditional on the endianness of the system
+# this needs to be conditional on the endianness of the system
 my int @NONE;                          # no shifting whatsoever
 my int @NET2 = 0x08,0x00;              # short, network (big-endian) order
 my int @NET4 = 0x18,0x10,0x08,0x00;                     # long
@@ -430,7 +430,7 @@ my multi sub unpack($template, Blob:D \b) {
 
 =head1 NAME
 
-P5pack - Implement Perl's pack()/unpack() built-ins
+Raku port of Perl's pack() / unpack() built-ins
 
 =head1 SYNOPSIS
 
@@ -438,7 +438,8 @@ P5pack - Implement Perl's pack()/unpack() built-ins
 
 =head1 DESCRIPTION
 
-Implements Perl's C<pack>/C<unpack> functionality in Raku.
+This module tries to mimic the behaviour of Perl's C<pack> and C<unpack>
+built-ins as closely as possible in the Raku Programming Language.
 
 Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
@@ -1092,8 +1093,6 @@ Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
             described by the TEMPLATE, the remainder of that input string is
             ignored.
 
-=head1 PORTING CAVEATS
-
 =head1 AUTHOR
 
 Elizabeth Mattijsen <liz@wenzperl.nl>
@@ -1103,7 +1102,7 @@ Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan and an earlier
 version that only lived in the Raku Ecosystem.
@@ -1111,3 +1110,5 @@ version that only lived in the Raku Ecosystem.
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
 =end pod
+
+# vim: expandtab shiftwidth=4

@@ -1,7 +1,7 @@
 NAME
 ====
 
-P5pack - Implement Perl's pack()/unpack() built-ins
+Raku port of Perl's pack() / unpack() built-ins
 
 SYNOPSIS
 ========
@@ -11,7 +11,7 @@ SYNOPSIS
 DESCRIPTION
 ===========
 
-Implements Perl's `pack`/`unpack` functionality in Raku.
+This module tries to mimic the behaviour of Perl's `pack` and `unpack` built-ins as closely as possible in the Raku Programming Language.
 
 Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
@@ -666,9 +666,6 @@ ORIGINAL PERL 5 DOCUMENTATION
             described by the TEMPLATE, the remainder of that input string is
             ignored.
 
-PORTING CAVEATS
-===============
-
 AUTHOR
 ======
 
@@ -679,7 +676,7 @@ Source can be located at: https://github.com/lizmat/P5pack . Comments and Pull R
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2019 Elizabeth Mattijsen
+Copyright 2018-2020 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan and an earlier version that only lived in the Raku Ecosystem.
 

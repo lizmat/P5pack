@@ -1,4 +1,4 @@
-use v6.c;
+use v6.*;
 use Test;
 use P5pack;
 
@@ -22,3 +22,5 @@ use P5pack;
 #is pack('(sl)<', -42, 4711), Buf.new(??);
 
 done-testing;
+
+# vim: expandtab shiftwidth=4
