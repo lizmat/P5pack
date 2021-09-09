@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/lizmat/P5pack/workflows/test/badge.svg)](https://github.com/lizmat/P5pack/actions)
+
 NAME
 ====
 
@@ -669,14 +671,14 @@ ORIGINAL PERL 5 DOCUMENTATION
 AUTHOR
 ======
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5pack . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan and an earlier version that only lived in the Raku Ecosystem.
 

@@ -1,6 +1,6 @@
 use v6.*;
 
-unit module P5pack:ver<0.0.12>:auth<cpan:ELIZABETH>;
+unit module P5pack:ver<0.0.13>:auth<zef:lizmat>;
 
 my %dispatch;
 BEGIN {
@@ -1095,14 +1095,14 @@ Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
 =head1 AUTHOR
 
-Elizabeth Mattijsen <liz@wenzperl.nl>
+Elizabeth Mattijsen <liz@raku.rocks>
 
 Source can be located at: https://github.com/lizmat/P5pack . Comments and
 Pull Requests are welcome.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2018-2020 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan and an earlier
 version that only lived in the Raku Ecosystem.
