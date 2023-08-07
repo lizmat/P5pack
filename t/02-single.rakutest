@@ -3,7 +3,7 @@ use Test;
 use P5pack;
 
 # This code contains no conditionals for endianness or word length.
-# Perl 6 is fully 64 bit even when the underlying architecture is not.
+# Raku is fully 64 bit even when the underlying architecture is not.
 # The code in P5pack always generates code for items like "i" as
 # though it were running on a big-endian processor.
 

@@ -1,6 +1,4 @@
-use v6.*;
-
-unit module P5pack:ver<0.0.13>:auth<zef:lizmat>;
+use v6.d;
 
 my %dispatch;
 BEGIN {
@@ -9,6 +7,7 @@ BEGIN {
       for <a A c C h H i I l L n N q Q s S U v V w x X Z>;
 }
 my int $bits = $*KERNEL.bits;
+$bits = 64 if $bits == 32 && $*KERNEL.hardware.contains("64");
 
 # this needs to be conditional on the endianness of the system
 my int @NONE;                          # no shifting whatsoever
