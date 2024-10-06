@@ -19,6 +19,8 @@ built-ins as closely as possible in the Raku Programming Language.
 
 Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
+Drop-in replacement for C<use experimental :pack>.
+
 =head1 ORIGINAL PERL 5 DOCUMENTATION
 
     pack TEMPLATE,LIST

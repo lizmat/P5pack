@@ -1,6 +1,8 @@
 Revision history for P5pack
 
 {{$NEXT}}
+
+0.0.15  2024-10-06T11:45:13+02:00
     - Made compatible with "use experimental :pack" by activating
       Buf.unpack upon loading and usurped the pack/unpack spectests
     - Fix bug in handling of pack 'h' vs 'H': they were reversed

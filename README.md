@@ -19,6 +19,8 @@ This module tries to mimic the behaviour of Perl's `pack` and `unpack` built-ins
 
 Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
+Drop-in replacement for `use experimental :pack`.
+
 ORIGINAL PERL 5 DOCUMENTATION
 =============================
 
