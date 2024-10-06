@@ -19,7 +19,10 @@
   "source-url": "https://github.com/lizmat/P5pack.git",
   "tags": [
     "PERL5",
-    "CPAN5"
+    "CPAN5",
+    "BINARY",
+    "PACK",
+    "UNPACK"
   ],
   "test-depends": [
   ],

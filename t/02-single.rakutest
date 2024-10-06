@@ -1,4 +1,3 @@
-use v6.*;
 use Test;
 use P5pack;
 
@@ -32,10 +31,10 @@ my uint $i3 = 0x9876543210987654; # not handled correctly by Rakudo
  is pack('C',    @a1),      Buf.new(123);
  is pack('C3',   @a1),      Buf.new(123, 97, -126);
  is pack('C3',   @a2),      Buf.new(123, 97, -126);
- is pack('h',    $h1),      Buf.new(0x3a, 0x6c);
- is pack('h2',   $h1, $h2), Buf.new(0x3a, 0x6c, 0x41, 0x42);
- is pack('H',    $h1),      Buf.new(0xa3, 0xc6);
- is pack('H2',   $h1, $h2), Buf.new(0xa3, 0xc6, 0x14, 0x24);
+ is pack('h',    $h1),      Buf.new(0xa3, 0xc6);
+ is pack('h2',   $h1, $h2), Buf.new(0xa3, 0xc6, 0x14, 0x24);
+ is pack('H',    $h1),      Buf.new(0x3a, 0x6c);
+ is pack('H2',   $h1, $h2), Buf.new(0x3a, 0x6c, 0x41, 0x42);
  is pack('i',    $i1),      Buf.new(0x56, 0x34, 0x12, 0x90, 0x78, 0x56, 0x34, 0x12);
  is pack('i',    $i2),      Buf.new(0xaa, 0xcb, 0xed, 0x6f, 0x87, 0xa9, 0xcb, 0xed);
 #is pack('i',    $i3),      Buf.new(?, ?, ?, ?, ?, ?, ?, ?);
