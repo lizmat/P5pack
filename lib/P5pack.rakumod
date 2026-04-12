@@ -1,8 +1,8 @@
 my %dispatch;
 BEGIN {
     my int $i = -1;
-    %dispatch.ASSIGN-KEY($_, ++$i)
-      for <a A c C h H i I l L n N q Q s S U v V w x X Z>;
+    %dispatch.ASSIGN-KEY($_, ++$i)  # UNCOVERABLE
+      for <a A c C h H i I l L n N q Q s S U v V w x X Z>;  # UNCOVERABLE
 }
 my int $bits = $*KERNEL.bits;
 $bits = 64 if $bits == 32 && $*KERNEL.hardware.contains("64");
@@ -19,12 +19,12 @@ my int @NAT;
 my Int $int-bound;
 my Int $int-diff;
 if $bits == 32 {
-    @NAT       = @VAX4;
-    $int-bound = 2147483647;
+    @NAT       = @VAX4;  # UNCOVERABLE
+    $int-bound = 2147483647;  # UNCOVERABLE
     $int-diff  = 4294967296;
 }
 else {   # assume 64
-    @NAT       = @VAX8;
+    @NAT       = @VAX8;  # UNCOVERABLE
     $int-bound =  9223372036854775807;
     $int-diff  = 18446744073709551616;
 }
@@ -50,7 +50,7 @@ my sub parse-pack-template($template) {
 
                 if %dispatch.EXISTS-KEY($repeat) { # next is another directive
                     @template.push( (%dispatch.AT-KEY($directive),1) );
-                    --$i;  # went one too far
+                    --$i;  # went one too far  # UNCOVERABLE
                 }
                 elsif $repeat eq '*' {
                     @template.push( (%dispatch.AT-KEY($directive),$repeat) );
@@ -401,7 +401,7 @@ my multi sub unpack($template, Blob:D \b) {
       -> --> Nil {                                      # x
           $pos = $repeat eq "*"
             ?? $elems
-            !! $pos + $repeat < $elems
+            !! $pos + $repeat <= $elems
               ?? $pos + $repeat
               !! die "'x' outside of " ~ b.^name;
       },

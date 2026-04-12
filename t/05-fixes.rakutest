@@ -1,0 +1,11 @@
+use Test;
+use P5pack;
+
+plan 3;
+
+# https://github.com/lizmat/P5pack/issues/14
+is-deeply unpack("x", Buf.new(0)),      [],   "x: off-by-one in x fixed";
+is-deeply unpack("x2", Buf.new(0,0)),   [],   "x2: off-by-one in x fixed";
+is-deeply unpack("x2A*", Buf.new(0,0)), [""], "x2A* off-by-one in x fixed";
+
+# vim: expandtab shiftwidth=4

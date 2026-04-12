@@ -1,15 +1,19 @@
 Revision history for P5pack
 
 {{$NEXT}}
+    - Fix off-by-one issue with "x" processing
+    - Modernize META and documentation
+    - Add preliminary coverage testing
+    - Update copyright year
 
 0.0.15  2024-10-06T11:45:13+02:00
-    - Made compatible with "use experimental :pack" by activating
+    - Make compatible with "use experimental :pack" by activating
       Buf.unpack upon loading and usurped the pack/unpack spectests
     - Fix bug in handling of pack 'h' vs 'H': they were reversed
     - Workaround weird Rakudo bug in unpacking 'h' and 'H'
     - Add CI button for each OS
-    - Modernized pod
-    - Added sponsor button and link
+    - Modernize pod
+    - Add sponsor button and link
     - Update copyright year
 
 0.0.14  2023-08-07T20:50:57+02:00
