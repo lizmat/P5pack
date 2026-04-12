@@ -21,8 +21,8 @@ Currently supported directives are: a A c C h H i I l L n N q Q s S U v V w x Z
 
 Drop-in replacement for `use experimental :pack`.
 
-ORIGINAL PERL 5 DOCUMENTATION
-=============================
+ORIGINAL PERL DOCUMENTATION
+===========================
 
     pack TEMPLATE,LIST
             Takes a LIST of values and converts it into a string using the
@@ -684,7 +684,7 @@ If you like this module, or what I'm doing more generally, committing to a [smal
 COPYRIGHT AND LICENSE
 =====================
 
-Copyright 2018, 2019, 2020, 2021, 2023, 2024 Elizabeth Mattijsen
+Copyright 2018, 2019, 2020, 2021, 2023, 2024, 2026 Elizabeth Mattijsen
 
 Re-imagined from Perl as part of the CPAN Butterfly Plan and an earlier version that only lived in the Raku Ecosystem.
 

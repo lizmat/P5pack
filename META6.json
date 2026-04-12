@@ -3,6 +3,8 @@
   "authors": [
     "Elizabeth Mattijsen"
   ],
+  "build-depends": [
+  ],
   "depends": [
   ],
   "description": "Raku port of Perl's pack() / unpack() built-ins",
@@ -12,6 +14,9 @@
     "P5pack": "lib/P5pack.rakumod"
   },
   "raku": "6.d",
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/P5pack.git",
   "support": {
     "bugtracker": "https://github.com/lizmat/P5pack/issues",
     "email": "liz@raku.rocks",
@@ -24,5 +29,7 @@
     "PACK",
     "UNPACK"
   ],
-  "version": "0.0.15"
+  "test-depends": [
+  ],
+  "version": "0.0.16"
 }

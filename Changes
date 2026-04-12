@@ -1,6 +1,8 @@
 Revision history for P5pack
 
 {{$NEXT}}
+
+0.0.16  2026-04-12T13:47:12+02:00
     - Fix off-by-one issue with "x" processing
     - Modernize META and documentation
     - Add preliminary coverage testing
